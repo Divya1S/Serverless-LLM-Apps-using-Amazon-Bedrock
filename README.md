@@ -10,15 +10,6 @@
     <p>
       This repository demonstrates a pattern for building a serverless application that pairs Automatic Speech Recognition (ASR) with a Large Language Model (LLM) to convert audio recordings into summaries. The system is designed to be event-driven — incoming audio triggers transcription and then summarization — and production-ready with logging for security, auditing, and compliance.
     </p>
-
-    <p>Key features</p>
-    <ol>
-      <li>Prompt and customize LLM responses using <code>Amazon Bedrock</code> (Titan model).</li>
-      <li>Transcribe audio using <code>Amazon Transcribe</code>.</li>
-      <li>Enable structured logging for LLM calls and ASR operations.</li>
-      <li>Deploy the workflow as an event-driven serverless pipeline using <code>AWS Lambda</code>.</li>
-      <li>Example notebooks that show how each piece is implemented and tested.</li>
-    </ol>
   </section>
 
 <hr />
