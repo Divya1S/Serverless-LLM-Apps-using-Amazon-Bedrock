@@ -1,23 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Serverless LLM Audio Summarizer — README</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.6; color:#111; max-width:1000px; margin:32px auto; padding:0 20px; }
-    header { border-left:6px solid #ff9900; padding:12px 20px; background:#fffaf0; margin-bottom:20px; border-radius:6px; }
-    h1 { margin:0 0 8px; font-size:28px; }
-    h2 { margin-top:28px; }
-    pre { background:#f6f8fa; padding:12px; border-radius:6px; overflow:auto; }
-    code { background:#f2f2f2; padding:2px 6px; border-radius:4px; font-family:monospace; }
-    ul { margin-top:8px; }
-    .badge { display:inline-block; margin-right:8px; padding:4px 8px; background:#eef; border-radius:999px; font-size:12px; }
-    .note { background:#eef9ff; border-left:4px solid #7fbfff; padding:8px 12px; border-radius:4px; }
-    .file-list code { display:block; margin:6px 0; }
-    footer { margin-top:36px; color:#666; font-size:13px; }
-    .commands { margin-top:8px; }
-  </style>
 </head>
 <body>
   <header>
@@ -88,34 +68,6 @@
       <li>Required Python libraries (see <code>requirements</code> below).</li>
     </ul>
   </section>
-
-  <section>
-    <h2>Example Requirements</h2>
-    <p>Create a <code>requirements.txt</code> similar to:</p>
-    <pre><code>boto3
-requests
-botocore
-jupyter
-ipython
-pandas
-tqdm
-# Add your Bedrock SDK / client libs if you have a specific SDK
-</code></pre>
-  </section>
-
-  <section>
-    <h2>Environment & IAM</h2>
-    <p>Set environment variables or use AWS profiles for access. Minimal IAM permissions include:</p>
-    <ul>
-      <li><code>transcribe:StartTranscriptionJob</code>, <code>transcribe:GetTranscriptionJob</code></li>
-      <li><code>bedrock:InvokeModel</code> (or equivalent Bedrock actions)</li>
-      <li><code>lambda:CreateFunction</code>, <code>lambda:InvokeFunction</code></li>
-      <li><code>s3:PutObject</code>, <code>s3:GetObject</code></li>
-      <li><code>logs:CreateLogGroup</code>, <code>logs:CreateLogStream</code>, <code>logs:PutLogEvents</code></li>
-    </ul>
-    <p class="note">Grant least privilege required and use role assumptions for Lambda instead of embedding permanent credentials in code.</p>
-  </section>
-
   <section>
     <h2>How to run the notebooks (local)</h2>
     <ol>
@@ -141,17 +93,6 @@ jupyter lab  # or jupyter notebook
       <li>Configure an S3 event (or API Gateway) to trigger the Lambda when audio is uploaded.</li>
       <li>Ensure logs flow to CloudWatch and consider storing structured outputs in S3 or a DB for retrieval.</li>
     </ol>
-
-    <pre><code># Example (AWS CLI skeleton)
-zip -r function.zip lambda_function.py  # include dependencies or use Layers
-aws lambda create-function \
-  --function-name audio-summarizer \
-  --zip-file fileb://function.zip \
-  --handler lambda_function.lambda_handler \
-  --runtime python3.9 \
-  --role arn:aws:iam::123456789012:role/lambda-transcribe-bedrock-role
-</code></pre>
-  </section>
 
   <section>
     <h2>Logging & Observability</h2>
@@ -183,35 +124,8 @@ aws lambda create-function \
     </ul>
   </section>
 
-  <section>
-    <h2>Extending this repo</h2>
-    <p>Ideas for next steps:</p>
-    <ul>
-      <li>Support multi-speaker diarization and speaker-labeled summaries.</li>
-      <li>Implement a web UI or Slack integration for user requests and summary delivery.</li>
-      <li>Persist summaries to a searchable store (OpenSearch, Pinecone, or ChromaDB) for retrieval-augmented workflows.</li>
-      <li>Wrap LLM calls in a policy/enforcement layer for sensitive content detection before generation.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Quick reference — environment variables & placeholders</h2>
-    <pre><code>AWS_PROFILE=your-aws-profile
-S3_BUCKET=your-audio-bucket
-BEDROCK_MODEL=titan-<model-name>
-TRANSCRIBE_LANGUAGE_CODE=en-US
-LAMBDA_ROLE_ARN=arn:aws:iam::123456789012:role/...
-</code></pre>
-  </section>
-
-  <section>
-    <h2>License & Credits</h2>
-    <p>Include your preferred open-source license file (e.g., <code>LICENSE</code>) in the repo. This project shows examples using Amazon Bedrock (Titan) and Amazon Transcribe and demonstrates serverless deployment patterns on AWS.</p>
-  </section>
-
   <footer>
     <div>Created to demonstrate building serverless LLM applications with Amazon Bedrock, Titan, and AWS Lambda. For more details, check the notebooks in this repo.</div>
-    <div style="margin-top:8px">If you'd like, I can also generate a <code>README.md</code> (Markdown) or a short quickstart <code>setup.sh</code> to accelerate running the examples locally — tell me which you'd prefer.</div>
   </footer>
 </body>
 </html>
