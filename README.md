@@ -25,27 +25,7 @@
 
 <hr />
 
-  <section>
-    <h2>Files / Notebooks</h2>
-    <div class="file-list">
-      <h3>1_first_generations_with_Amazon_Bedrock.ipynb</h3>
-      <p>Introductory notebook showing how to call Amazon Bedrock (Titan) to perform text generations and how to craft prompts and handle responses.</p>
-
-      <h3>2_Summarize_an_audio_file.ipynb</h3>
-      <p>End-to-end example that takes an audio file, transcribes it (Amazon Transcribe or other ASR), and summarizes the transcript using an LLM.</p>
-
-      <h3>3_Enable_logging.ipynb</h3>
-      <p>Shows how to enable structured logging for LLM and ASR calls; helpful for auditing, debugging, and compliance.</p>
-
-      <h3>4_Deploy_an_AWS_Lambda_function.ipynb</h3>
-      <p>Deploys the summarizer as an AWS Lambda function, packages dependencies, and demonstrates how to configure the function for event-driven processing.</p>
-
-      <h3>5_Event-driven_generation.ipynb</h3>
-      <p>Builds an event-driven flow: detects new customer inquiries (uploaded audio), triggers transcription, and invokes the LLM to generate a summary. Demonstrates integration points and best practices.</p>
-    </div>
-  </section>
-
-  <h2>📒 Files / Notebooks</h2>
+  <h2>Files / Notebooks</h2>
 
 <h3>1. <code>1_first_generations_with_Amazon_Bedrock.ipynb</code></h3>
 <p>Introductory notebook showing how to call Amazon Bedrock (Titan) to perform text generations, 
