@@ -21,6 +21,19 @@
     </ol>
   </section>
 
+<hr />
+
+<h2>🚀 Key Features</h2>
+<ul>
+  <li>Prompt and customize LLM responses using <code>Amazon Bedrock</code> (Titan model)</li>
+  <li>Transcribe audio using <code>Amazon Transcribe</code></li>
+  <li>Enable structured logging for LLM calls and ASR operations</li>
+  <li>Deploy the workflow as an event-driven serverless pipeline using <code>AWS Lambda</code></li>
+  <li>Example notebooks that show how each piece is implemented and tested</li>
+</ul>
+
+<hr />
+
   <section>
     <h2>Files / Notebooks</h2>
     <div class="file-list">
