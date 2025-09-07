@@ -61,11 +61,6 @@ and invokes the LLM to generate a summary. Demonstrates integration points and b
       <li><strong>Logging & Storage</strong> — Results and logs are saved (CloudWatch, S3, or a DB) for auditing and later retrieval/analytics.</li>
     </ol>
 
-    <div class="note">
-      <strong>Notes:</strong> The LLM (Titan via Bedrock) is used for summarization and prompt-based customization. You should design prompts carefully (examples in notebooks) and ensure you do not send PII to models without appropriate governance.
-    </div>
-  </section>
-
   <section>
     <h2>Prerequisites</h2>
     <ul>
